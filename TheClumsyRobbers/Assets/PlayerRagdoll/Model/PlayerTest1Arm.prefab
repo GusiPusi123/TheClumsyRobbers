@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5193942641748894313}
-  - component: {fileID: 1580560244988280383}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -35,50 +34,6 @@ Transform:
   - {fileID: 5082017842465867932}
   m_Father: {fileID: 3465138468525975989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1580560244988280383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121211144224400613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 1
-  tripodSize: 1
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_Transforms:
-  - {fileID: 5193942641748894313}
-  - {fileID: 6703923338797831129}
-  - {fileID: 8778175328569415261}
-  - {fileID: 2151835068606620391}
-  - {fileID: 1882584163958870123}
-  - {fileID: 8906184714191835359}
-  - {fileID: 2139279212952257532}
-  - {fileID: 6229882725462490411}
-  - {fileID: 3247280773860895172}
-  - {fileID: 7025818251412839556}
-  - {fileID: 2874082776764578890}
-  - {fileID: 9047706658788459730}
-  - {fileID: 2101714498429093270}
-  - {fileID: 1767426223975306618}
-  - {fileID: 1568575929681911160}
-  - {fileID: 2032188803266385616}
-  - {fileID: 8827968351326966395}
-  - {fileID: 883504330909983419}
-  - {fileID: 1696884675533298663}
-  - {fileID: 113692742279958338}
-  - {fileID: 1373287832742936071}
-  - {fileID: 5082017842465867932}
-  - {fileID: 5072247580250983340}
-  - {fileID: 2659370914127444205}
-  - {fileID: 1141733937872901227}
 --- !u!1 &166527889006003818
 GameObject:
   m_ObjectHideFlags: 0

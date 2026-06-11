@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] Rigidbody rigidbody3D;
-    [SerializeField] ConfigurableJoint mainJoint;
+    // Если вам нужно вращать объект, проще использовать Transform
+    // [SerializeField] CharacterJoint mainJoint;
     Vector2 moveInputVector = Vector2.zero;
     bool JumpButtonPressed = false;
     float maxspeed = 3f;
@@ -72,13 +73,12 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        // Вращение цели (если нужно)
+        // Вращение объекта в сторону движения
         if (inputMagnitude > 0)
         {
-            // Создаем желаемое направление вращения
             Vector3 inputDirection = new Vector3(moveInputVector.x, 0, moveInputVector.y);
-            Quaternion desiredDirection = Quaternion.LookRotation(inputDirection, transform.up);
-            mainJoint.targetRotation = Quaternion.RotateTowards(mainJoint.targetRotation, desiredDirection, Time.fixedDeltaTime * 300);
+            Quaternion desiredRotation = Quaternion.LookRotation(inputDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, Time.fixedDeltaTime * 300);
         }
 
         // Прыжок
