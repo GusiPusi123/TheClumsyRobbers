@@ -6998,7 +6998,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.46666667, g: 0.46666667, b: 0.46666667, a: 1}
+  m_Color: {r: 0.80784315, g: 0.66109294, b: 0.3137255, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -17565,6 +17565,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 529100945946173490, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 529100945946173490, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.86051
       objectReference: {fileID: 0}
@@ -17608,9 +17612,17 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1156451891347850171, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1645197675342660844, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
       propertyPath: m_Mass
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723701792164311056, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1723701792164311056, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
       propertyPath: m_Material
@@ -17789,6 +17801,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5073842223611903690, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073842223611903690, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 7bbde9afb1a99b04283dfd50cf9c0b65, type: 2}
@@ -17872,6 +17888,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 7bbde9afb1a99b04283dfd50cf9c0b65, type: 2}
+    - target: {fileID: 8416965792340957106, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8828624793285125358, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
