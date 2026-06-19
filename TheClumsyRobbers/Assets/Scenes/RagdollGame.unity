@@ -131,9 +131,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 16811812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ElevatorAllHorizontal
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -691,9 +691,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 194617448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ElevatorAll
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -894,9 +894,9 @@ GameObject:
   - component: {fileID: 273518611}
   - component: {fileID: 273518610}
   - component: {fileID: 273518609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ElevatorHorizontal
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1641,7 +1641,10 @@ PrefabInstance:
     - {fileID: 4729562171498124425, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2734452308514891558, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818200467}
   m_SourcePrefab: {fileID: 100100000, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
 --- !u!1 &368129037
 GameObject:
@@ -8470,6 +8473,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1973977841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &818200465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2734452308514891558, guid: 6319f3c7e7aca7d489ee74f78825ac06, type: 3}
+  m_PrefabInstance: {fileID: 352198762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &818200467
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818200465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13f2a350711f0fd4cbf941b48ffd7f71, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &949469686
 Mesh:
   m_ObjectHideFlags: 0
@@ -18880,9 +18909,9 @@ GameObject:
   - component: {fileID: 1372151166}
   - component: {fileID: 1372151165}
   - component: {fileID: 1372151169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elevator
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35749,9 +35778,9 @@ GameObject:
   - component: {fileID: 1669191261}
   - component: {fileID: 1669191260}
   - component: {fileID: 1669191259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -37265,9 +37294,9 @@ GameObject:
   - component: {fileID: 1789466828}
   - component: {fileID: 1789466827}
   - component: {fileID: 1789466826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
