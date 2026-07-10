@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
 // using UnityEngine;
 
-// public class Controllmaksim : MonoBehaviour
+// public class PlayerController : MonoBehaviour
 // {
 //     public Rigidbody mainRigidbody; // Основная часть, которой управляем
 //     public float moveSpeed = 5f;
@@ -96,11 +96,16 @@ public class PlayerController : MonoBehaviour
 //     public LayerMask groundLayer;
 //     public Transform groundCheck;
 //     public float groundCheckRadius = 0.2f;
-//     public float rotationSpeed = 10f; // скорость поворота
+//     public float rotationSpeed = 720f; // скорость поворота в градусах в секунду
+//     public float jumpCooldown = 1f; // интервал между прыжками в секундах
 
 //     [Header("Animation Settings")]
 //     public Animator animator; // Ссылка на компонент Animator
 
+//     [Header("Rotation Correction")]
+//     public float rotationOffsetY = 0f; // Смещение по Y для корректировки ориентации модели
+
+//     private float lastJumpTime = -Mathf.Infinity; // время последнего прыжка
 //     private bool isGrounded;
 
 //     void Update()
@@ -128,45 +133,47 @@ public class PlayerController : MonoBehaviour
 //         float moveZ = Input.GetAxis("Vertical");
 
 //         // Создаем направление движения, основанное на камере
-//         Vector3 moveDir = (camTransform.forward * moveZ + camTransform.right * moveX).normalized;
-//         moveDir.y = 0; // чтобы не было наклонов вверх/вниз
+//         Vector3 moveDir = (camTransform.forward * moveZ + camTransform.right * moveX);
+//         moveDir.y = 0; // чтобы не было наклонов
+//         float moveMagnitude = moveDir.magnitude;
 
-//         // Передача движения основной части
-//         Vector3 targetVelocity = moveDir * moveSpeed;
-//         Vector3 currentVelocity = mainRigidbody.velocity;
-
-//         // Обновляем горизонтальные компоненты скорости
-//         mainRigidbody.velocity = new Vector3(targetVelocity.x, currentVelocity.y, targetVelocity.z);
-
-//         // --- ИСПРАВЛЕНИЕ: РАЗВОРOT В СТОРОНУ ДВИЖЕНИЯ ---
-//         // Если вектор движения не равен нулю (мы жмем на кнопки)
-//         if (moveDir.sqrMagnitude > 0.01f)
+//         if (moveMagnitude > 0.01f)
 //         {
-//             // Определяем, куда нужно смотреть
-//             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
-//             // Плавно разворачиваем игровой объект (весь скрипт) в эту сторону
-//             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-//         }
-//         // ------------------------------------------------
+//             moveDir.Normalize();
 
-//         // --- УПРАВЛЕНИЕ АНИМАЦИЕЙ ---
+//             // Передача движения основной части
+//             Vector3 targetVelocity = moveDir * moveSpeed;
+//             Vector3 currentVelocity = mainRigidbody.velocity;
+//             mainRigidbody.velocity = new Vector3(targetVelocity.x, currentVelocity.y, targetVelocity.z);
+
+//             // --- Поворот в сторону направления движения ---
+//             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
+//             targetRotation *= Quaternion.Euler(0, rotationOffsetY, 0);
+
+//             // Плавный разворот
+//             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+//         }
+//         else
+//         {
+//             // Если не движемся, сохраняем текущую скорость по x,z
+//             Vector3 currentVelocity = mainRigidbody.velocity;
+//             mainRigidbody.velocity = new Vector3(currentVelocity.x, currentVelocity.y, currentVelocity.z);
+//         }
+
+//         // --- Анимации ---
 //         if (animator != null)
 //         {
-//             // Проверяем, идет ли игрок прямо сейчас
-//             bool isMoving = moveDir.sqrMagnitude > 0.01f;
-            
+//             bool isMoving = moveMagnitude > 0.01f;
 //             animator.SetBool("Walk", isMoving);
-//             animator.SetBool("IsGrounded", isGrounded); // Передаем, на земле ли мы
+//             animator.SetBool("IsGrounded", isGrounded);
 //         }
-//         // ----------------------------
 
-//         // Прыжок
-//         if (Input.GetButtonDown("Jump") && isGrounded)
+//         // --- Прыжок ---
+//         if (Input.GetButtonDown("Jump") && isGrounded && Time.time - lastJumpTime >= jumpCooldown)
 //         {
-//             // Физический толчок вверх
 //             mainRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+//             lastJumpTime = Time.time;
 
-//             // Активация анимации прыжка через ТРИГГЕР
 //             if (animator != null)
 //             {
 //                 animator.SetTrigger("Jump");
